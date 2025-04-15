@@ -767,7 +767,7 @@ d_out$filter_result <- ifelse(d_out$intra_priming == FALSE &
 
 # if mono-exons are to be excluded (--e), set filter_result column to Artifact
 if(opt$force_multi_exon == TRUE){
-  sel <- d_out$exons == 1 & df_out$structural_category != "full-splice_match"
+  sel <- d_out$exons == 1 & d_out$structural_category != "full-splice_match"
   d_out$filter_result[sel] <- "Artifact"
 }
 
